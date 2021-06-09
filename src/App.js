@@ -1,11 +1,5 @@
 // Styling
-import {
-  Description,
-  GlobalStyle,
-  ShopImage,
-  ThemeButton,
-  Title,
-} from "./styles";
+import { GlobalStyle } from "./styles";
 import React, { useState } from "react";
 
 import Home from "./components/Home";
@@ -80,10 +74,14 @@ function App() {
       <Link to="/">Home</Link>
       <Link to="/products">products</Link>
       <Switch>
+        <Route path="/products/:productSlug">
+          <ProductDetail products={_products} deleteProduct={deleteProduct} />
+        </Route>
+
         <Route path="/products">
           <ProductList products={_products} deleteProduct={deleteProduct} />
         </Route>
-        <Route exact path="/">
+        <Route path="/" exact>
           <Home />
         </Route>
       </Switch>

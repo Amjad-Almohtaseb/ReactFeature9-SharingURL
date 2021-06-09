@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 // Styling
 import { Logo, NavItem, ThemeButton } from "../styles";
 import lightLogo from "../light-logo.jpg"; //lightLogo it is mean that this the variable that contain the photo
@@ -8,7 +7,10 @@ const NavBar = (props) => {
   return (
     <nav className="navbar navbar-expand">
       <Logo to="/" className="navbar-brand">
-        <img src={props.currentTheme === "light" ? lightLogo : darkLogo} />
+        <img
+          src={props.currentTheme === "light" ? lightLogo : darkLogo}
+          alt="logo"
+        />
       </Logo>
       <div className="navbar-nav ml-auto">
         <NavItem
